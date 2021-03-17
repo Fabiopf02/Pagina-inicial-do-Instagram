@@ -1,7 +1,6 @@
-let number = 2;
+let number = 3;
 
 function changeImage() {
-  console.log(number)
   const current = document.querySelector('.visible');
   const next = document.querySelector(`.image${number}`);
 
@@ -9,8 +8,12 @@ function changeImage() {
     number = 0;
   }
   number+=1;
+  const last = document.querySelector('.last')
+  if (last)
+    last.classList.remove('last');
+  current.classList.add('last');
   next.classList.add('visible');
   current.classList.remove('visible');
 }
 
-setInterval(changeImage, 4000);
+setInterval(changeImage, 5000);
